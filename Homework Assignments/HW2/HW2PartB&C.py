@@ -65,6 +65,8 @@ def get_date_as_int(date):
         return new_date
 
 # part a
+# parts b & c
+input_file = ('C:\Users\siddh\PycharmProjects\UHCIS2348Summer2023\HW2', 'r')
 input_date = input("Enter date: ")
 while input_date != "-1":
     new_date = get_date_as_int(input_date)
@@ -77,8 +79,4 @@ while input_date != "-1":
 
     input_date = input()
 
-
-
-
-
-
+input_file.close()
