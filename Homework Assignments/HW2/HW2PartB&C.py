@@ -16,7 +16,7 @@ print(now)
 # Step 6: Call the function to pass the valid date
 def get_date_as_int(date):
      original_date = 0
-     new_date = ''
+     valid_date = ''
      if date.find(",") != -1:
         month_day, year = date.split(',')
 
@@ -30,48 +30,48 @@ def get_date_as_int(date):
         year = year.strip()
 
         if month == "January":
-            new_date = '1' + '/'
+            valid_date = '1' + '/'
         elif month == "February":
-            new_date = '2' + '/'
+            valid_date = '2' + '/'
         elif month == "March":
-            new_date = '3' + '/'
+            valid_date = '3' + '/'
         elif month == "April":
-            new_date = '4' + '/'
+            valid_date = '4' + '/'
         elif month == "May":
-            new_date = "5" + "/"
+            valid_date = "5" + "/"
         elif month == "June":
-            new_date = "6" + "/"
+            valid_date = "6" + "/"
         elif month == "July":
-            new_date = "7" + "/"
+            valid_date = "7" + "/"
         elif month == "August":
-            new_date = "8" + "/"
+            valid_date = "8" + "/"
         elif month == "September":
-            new_date = "9" + "/"
+            valid_date = "9" + "/"
         elif month == "October":
-            new_date = "10" + "/"
+            valid_date = "10" + "/"
         elif month == "November":
-            new_date = "11" + "/"
+            valid_date = "11" + "/"
         elif month == "December":
-            new_date = "12" + "/"
+            valid_date = "12" + "/"
         else:
             original_date = 0
 
-        new_date += day + '/'
-        new_date += year
+        valid_date += day + '/'
+        valid_date += year
 
      if original_date != 1:
         return ""
      else:
-        return new_date
+        return valid_date
 
 # part a
 # parts b & c
 input_file = ('C:\Users\siddh\PycharmProjects\UHCIS2348Summer2023\HW2', 'r')
 input_date = input("Enter date: ")
 while input_date != "-1":
-    new_date = get_date_as_int(input_date)
-    if new_date != "":
-        print(new_date)
+    valid_date = get_date_as_int(input_date)
+    if valid_date != "":
+        print(valid_date)
         print('valid')
     else:
         print('not valid')
