@@ -22,7 +22,7 @@ with open('ManufacturerList.csv', 'r') as csvfile:
         manufacturer_dict[item_id] = {
             'manufacturer_name': manufacturer_name,
             'item_type': item_type,
-            'item_damaged': item_damaged}  # create dictionary with keys and values
+            'item_damaged': item_damaged}  # Create dictionary with keys and values
 
 # Read price list
 price_dict = {}  # Create an empty dictionary
