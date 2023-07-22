@@ -7,7 +7,7 @@
 import csv
 from datetime import date, datetime
 
-# Read all three files (manufacturer, price, service date) and merge into one program
+# Read all three input files (manufacturer, price, service date) and merge into one program
 
 # Read manufacturer list
 manufacturer_dict = {}  # create an empty dictionary
