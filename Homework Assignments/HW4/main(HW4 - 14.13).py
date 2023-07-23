@@ -21,6 +21,8 @@ def partition(user_ids, i, k):
     done = False
     l = i
     h = k
+    
+    # Step 3 - Initialized to the left and right sides of the current elements being sorted
     while not done:
         # Increment low(l) while user_ids[l] < pivot
         while user_ids[l] < pivot:
@@ -28,7 +30,8 @@ def partition(user_ids, i, k):
         # Decrement h(high) while pivot < user_ids[h]
         while pivot < user_ids[h]:
             h = h - 1
-
+            
+        # Step 4 - Determine if a swap is necessary
         # If there are zero or one items remaining, all numbers are partitioned. Return h
         if l >= h:
             done = True
