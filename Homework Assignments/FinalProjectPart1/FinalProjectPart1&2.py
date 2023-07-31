@@ -163,7 +163,7 @@ query2 = []
 user_manufacturer = str(input('Enter your manufacturer: '))
 user_item_type = str(input('Enter your item type: '))
 
-# Attach the sorted full inventory
+# Attach the sorted file from 'FullInventory.csv'
 full_inventory = sorted(combined_data)
 
 # checks to see if entered input matches the desired input within the csv inventory file
