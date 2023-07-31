@@ -2,8 +2,9 @@
 # PSID: 1512852
 # Program: Inventory Management
 
-# Include csv and date with datetime
+# Part 1 - Accessing files and sorting data
 
+# Include csv and date with datetime
 import csv
 from datetime import date, datetime
 
@@ -150,3 +151,37 @@ with open('DamagedInventory.csv', 'w', newline='') as damaged_inventory_file:
     writer = csv.writer(damaged_inventory_file)
     writer.writerow(['item_id', 'manufacturer_name', 'item_type', 'price', 'service_date'])
     writer.writerows(damaged_items)
+
+
+# Part 2 - Inventory Interactive Query Capability
+
+# Create query 1 and 2
+query1 = []
+query2 = []
+
+# Prompt user to enter name of manufacturer as well as the type of item
+user_manufacturer = str(input('Enter your manufacturer: '))
+user_item_type = str(input('Enter your item type: '))
+
+# Attach the sorted full inventory
+full_inventory = sorted(combined_data)
+
+# checks to see if entered input matches the desired input within the csv inventory file
+# user enters a manufacturer name and a type of item as long as the user does not enter q for 'quit'
+while user_manufacturer != 'q':
+    for item_data in range(0, len(full_inventory)): # iterates over the range of values in full_inventory
+        if user_manufacturer in full_inventory[item_data]:  # if there is a match of values, then the data is appended to a new list 
+            if user_item_type in full_inventory[item_data]:
+                query1.append(full_inventory[item_data])
+        if user_item_type in full_inventory[item_data]: # same goes for query 2
+            query2.append(full_inventory[item_data])
+
+    if len(query1) != 0: 
+        print('Your item is: ', query1)
+        print('You may, also, consider: ', query2)  # if there is one or two more matches, then print "You may also consider"
+    else:   # Otherwise, print "No such item in inventory", if no match occurs
+        print('No such item in inventory')
+
+# Prompt the user again to enter in input until 'q' is entered, thereby quitting the program
+    user_manufacturer = str(input('Enter your manufacturer: '))
+    user_item_type = str(input('Enter your item type: '))
